@@ -1,0 +1,5 @@
+###
+GET http://localhost:8080/load/3
+Accept: application/json
+
+###

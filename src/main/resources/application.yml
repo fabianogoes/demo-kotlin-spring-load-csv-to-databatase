@@ -1,0 +1,28 @@
+info:
+  app:
+    name: "spike-load-csv"
+    description: "Spike Load Big CSV in memory"
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: INFO
+    br:
+      com:
+        creditas:
+          spikeloadtable: INFO
+    org:
+      springframework:
+        web: INFO
