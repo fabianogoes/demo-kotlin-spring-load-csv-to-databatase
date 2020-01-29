@@ -1,5 +1,9 @@
 ###
-GET http://localhost:8080/load/3
+GET http://localhost:8080/load/1
+Accept: application/json
+
+###
+GET http://localhost:8080/configuration/0-0.099/4000-7000/200-249/60/13 a 15/0-2000/SUL
 Accept: application/json
 
 ###

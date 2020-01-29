@@ -8,6 +8,12 @@ server:
   servlet:
     context-path: /
 
+# Files at resources folder
+files:
+  path:
+    csv: csv/table.csv
+    json: json/example.json
+
 management:
   server:
     port: 8080
