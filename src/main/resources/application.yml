@@ -12,7 +12,6 @@ server:
 files:
   path:
     csv: csv/table.csv
-    json: json/example.json
 
 management:
   server:
