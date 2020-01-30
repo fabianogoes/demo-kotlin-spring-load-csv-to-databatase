@@ -1,23 +1,27 @@
 package br.com.creditas.spikeloadtable.repository
 
 import br.com.creditas.spikeloadtable.model.Configuration
-import br.com.creditas.spikeloadtable.util.ProcessTimer
 import br.com.creditas.spikeloadtable.model.ResponseProcessLoadDTO
+import br.com.creditas.spikeloadtable.util.ProcessTimer
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import org.apache.commons.csv.CSVRecord
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.Resource
 import java.time.LocalDateTime
 
 object Database {
 
+    private val logger: Logger = LoggerFactory.getLogger(Database::class.java)
+
     private var completeTable = mutableListOf<Configuration>()
     private var totalLines = 0
     private var totalTables = 0
 
     fun factory(totalTablesToRun: Int? = 1, csvFilePath: String): ResponseProcessLoadDTO {
-        println("<<< Loading Table... >>>")
+        logger.info("<<< Loading Table... >>>")
         val startProcess = LocalDateTime.now()
         totalTables += totalTablesToRun!!
 
