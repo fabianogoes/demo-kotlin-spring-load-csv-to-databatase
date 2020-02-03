@@ -13,16 +13,17 @@ interface ConfigurationRepository {
 }
 
 @Repository
-class ConfigurationRepositoryImpl : ConfigurationRepository {
+class ConfigurationRepositoryImpl() : ConfigurationRepository {
 
-    private val logger: Logger = LoggerFactory.getLogger(ConfigurationRepositoryImpl::class.java)
-
-    @Value("\${files.path.csv}")
-    private val csvFilePath = "csv/table.csv"
+    private final val logger: Logger = LoggerFactory.getLogger(ConfigurationRepositoryImpl::class.java)
+    private final val csvPath = "csv/table.csv"
+    private final val csvAutoLoad = false
 
     init {
-        logger.info("<<< Building Database... >>>")
-        Database.factory(csvFilePath = csvFilePath)
+        if (csvAutoLoad) {
+            logger.info("<<< Building Database... >>>")
+            Database.factory(csvFilePath = csvPath)
+        }
     }
 
     override fun findAll() = Database.getCompleteTable()

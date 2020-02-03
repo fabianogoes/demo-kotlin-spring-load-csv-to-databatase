@@ -1,4 +1,8 @@
-GET http://localhost:8080/configuration?rangeLTV=0-0.099&rangeTicket=4000-7000&rangeScore=200-249&maturity=60&carAge=13 a 15&rangeRendaBruta=0-2000&regiao=SUL
+GET http://localhost:8080/configuration/csv?rangeLTV=0-0.099&rangeTicket=4000-7000&rangeScore=200-249&maturity=60&carAge=13 a 15&rangeRendaBruta=0-2000&regiao=SUL
+Accept: application/json
+
+###
+GET http://localhost:8080/configuration/jpa?rangeLTV=0-0.099&rangeTicket=4000-7000&rangeScore=200-249&maturity=60&carAge=13 a 15&rangeRendaBruta=0-2000&regiao=SUL
 Accept: application/json
 
 ###

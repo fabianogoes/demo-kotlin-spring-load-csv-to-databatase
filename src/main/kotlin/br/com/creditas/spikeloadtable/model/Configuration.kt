@@ -1,14 +1,28 @@
 package br.com.creditas.spikeloadtable.model
 
+import javax.persistence.*
+
+@Entity
+@Table(name = "TBL_CONFIGURATION")
 data class Configuration(
+        @Id
+        @Column(name = "ID")
         var id: Long? = 0,
+        @Column(name = "RANGE_LTV")
         val rangeLTV: String,
+        @Column(name = "RANGE_TICKET")
         val rangeTicket: String,
+        @Column(name = "RANGE_SCORE")
         val rangeScore: String,
-        val maturity: String,
+        @Column(name = "MATURITY")
+        val maturity: Int,
+        @Column(name = "CAR_AGE")
         val carAge: String,
+        @Column(name = "RANGE_RENDA_BRUTA")
         val rangeRendaBruta: String,
+        @Column(name = "REGIAO")
         val regiao: String,
+        @Column(name = "TAXA")
         var taxa: String? = null
 ) {
     override fun equals(other: Any?): Boolean {

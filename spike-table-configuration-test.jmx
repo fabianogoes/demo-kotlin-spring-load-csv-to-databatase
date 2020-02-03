@@ -34,7 +34,7 @@
           <stringProp name="HTTPSampler.port">8080</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/configuration?rangeLTV=0-0.099&amp;rangeTicket=4000-7000&amp;rangeScore=200-249&amp;maturity=60&amp;carAge=13 a 15&amp;rangeRendaBruta=0-2000&amp;regiao=SUL</stringProp>
+          <stringProp name="HTTPSampler.path">/configuration/jpa?rangeLTV=0-0.099&amp;rangeTicket=4000-7000&amp;rangeScore=200-249&amp;maturity=60&amp;carAge=13 a 15&amp;rangeRendaBruta=0-2000&amp;regiao=SUL</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

@@ -59,7 +59,7 @@ object Database {
                 rangeLTV = csvLine.get(0),
                 rangeTicket = csvLine.get(1),
                 rangeScore = csvLine.get(2),
-                maturity = csvLine.get(3),
+                maturity = csvLine.get(3).toInt(),
                 carAge = csvLine.get(4),
                 rangeRendaBruta = csvLine.get(5),
                 regiao = csvLine.get(6),

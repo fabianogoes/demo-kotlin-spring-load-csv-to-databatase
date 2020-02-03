@@ -8,11 +8,6 @@ server:
   servlet:
     context-path: /
 
-# Files at resources folder
-files:
-  path:
-    csv: csv/table.csv
-
 management:
   server:
     port: 8080
@@ -20,6 +15,22 @@ management:
     web:
       exposure:
         include: "*"
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pricing
+    password: postgres
+    username: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        ddl-auto: none
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    database: postgresql
 
 logging:
   level:
@@ -31,3 +42,10 @@ logging:
     org:
       springframework:
         web: INFO
+      hibernate:
+        SQL: DEBUG
+
+# Files at resources folder
+csv:
+  autoload: true
+  path: csv/table.csv

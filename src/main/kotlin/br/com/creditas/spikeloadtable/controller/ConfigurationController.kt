@@ -5,10 +5,11 @@ import br.com.creditas.spikeloadtable.service.ConfigurationService
 import org.springframework.web.bind.annotation.*
 
 @RestController
+@RequestMapping("/configuration")
 class ConfigurationController(val configurationService: ConfigurationService) {
 
-    @GetMapping("/configuration")
-    fun getTaxByConfiguration(
+    @GetMapping("/csv")
+    fun getTaxByConfigurationCsv(
             @RequestParam(value = "rangeLTV") rangeLTV: String,
             @RequestParam(value = "rangeTicket") rangeTicket: String,
             @RequestParam(value = "rangeScore") rangeScore: String,
@@ -17,5 +18,17 @@ class ConfigurationController(val configurationService: ConfigurationService) {
             @RequestParam(value = "rangeRendaBruta") rangeRendaBruta: String,
             @RequestParam(value = "regiao") regiao: String,
             configuration: Configuration
-    ) = configurationService.findTaxaByConfiguration(configuration)
+    ) = configurationService.findTaxaCsv(configuration)
+
+    @GetMapping("/jpa")
+    fun getTaxByConfigurationJpa(
+            rangeLTV: String,
+            rangeTicket: String,
+            rangeScore: String,
+            maturity: Int,
+            carAge: String,
+            rangeRendaBruta: String,
+            regiao: String,
+            configuration: Configuration
+    ) = configurationService.findTaxaJpa(configuration)
 }
